@@ -1,0 +1,12 @@
+{application, updo,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { updo_app, []}},
+  {env, []}
+ ]}.
