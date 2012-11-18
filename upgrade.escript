@@ -3,6 +3,10 @@
 %% -*- mode: erlang;erlang-indent-level: 4;indent-tabs-mode: nil -*-
 %% ex: ft=erlang ts=4 sw=4 et
 
+%% this script is more than less taken out from the 
+%% rebar project http://github.com/basho/rebar which is
+%% Apache licensed, I guess this holds for this work as well.
+
 -define(TIMEOUT, 60000).
 -define(INFO(Fmt,Args), io:format(Fmt,Args)).
 

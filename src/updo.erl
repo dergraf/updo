@@ -7,7 +7,6 @@
          dry_run_low/0,
          dry_run_low/1]).
 
-
 run() ->
     updo_low:translate_and_run(high_level_script()).
 
