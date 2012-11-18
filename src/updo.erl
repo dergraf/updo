@@ -61,9 +61,9 @@ read_script(Filename) ->
 	{ok, HLinstrs} ->
 	    HLinstrs;
 	{error, Error} when is_tuple(Error) ->
-	    io:format("Failed to parse line ~s~n", [file:format_error(Error)]),
+        error_logger:error_msg("Failed to parse line ~s~n", [file:format_error(Error)]),
 	    exit(parse_error);
 	{error, Error} ->
-	    io:format("Failed to open file: ~s~n", [file:format_error(Error)]),
+        error_logger:error_msg("Failed to open file ~s~n", [file:format_error(Error)]),
 	    exit(Error)
     end.

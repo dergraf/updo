@@ -45,7 +45,7 @@ translate(HLinstrs, AppsNow) ->
 	{ok, LLinstrs} ->
             {AppsAfter, LLinstrs};
 	{error, systools_rc, Error} ->
-	    io:format(systools_rc:format_error(Error)),
+        error_logger:error_msg(systools_rc:format_error(Error)),
 	    exit(parse_error)
     end.
 
@@ -77,7 +77,7 @@ find_app_modules(App) ->
 	    Files = filelib:wildcard("*" ++ Ext, Path),
 	    [ list_to_atom(filename:basename(F, Ext)) || F <- Files ];
 	{error, _} ->
-	    io:format("Can't find lib dir for application '~s'", [App]),
+        error_logger:error_msg("Can't find lib dir for application '~s'~n", [App]),
 	    exit({unknown_application, App})
     end.
 
